@@ -166,163 +166,83 @@ namespace VeritabanliAracKiralamaProjesi
 
                             }
 
-                }
-                            else if (istek == 2)
+                        }
+
+                        ///////////////////////////////////////////////////////////////////////////////
+                        else if (istek == 2)
+                        {
+                            if (true)
                             {
 
-                                Console.Write("Kullanıcı adınızı giriniz:");
-                                kullaniciAdi = Console.ReadLine();
-                                Console.Write("Parolanızı giriniz:");
-                                sifre = Console.ReadLine();
+                            }
+                            Console.Write("Kullanıcı adınızı giriniz:");
+                            kullaniciAdi = Console.ReadLine();
+                            Console.Write("Parolanızı giriniz:");
+                            sifre = Console.ReadLine();
 
-                                for (i = 0; i < kullaniciAdlari.Count; i++)
+                            for (i = 0; i < kullaniciAdlari.Count; i++)
+                            {
+                                if (kullaniciAdi == kullaniciAdlari[i])
                                 {
-                                    if (kullaniciAdi == kullaniciAdlari[i])
+                                    if (sifre == sifreler[i])
                                     {
-                                        if (sifre == sifreler[i])
+                                        Console.WriteLine("Girş Yapıldı \n");
+
+                                        while (true)
                                         {
-                                            Console.WriteLine("Girş Yapıldı \n");
+                                            Console.WriteLine("1-Araç Kiralama \n2-Araç Teslim Alma \n0-ÇIKIŞ");
+                                            Console.Write("Yapmak istediğiniz işlemi seçiniz:");
+                                            int aracIstek = Convert.ToInt32(Console.ReadLine());
 
-                                            while (true)
+                                            if (aracIstek == 1)
                                             {
-                                                Console.WriteLine("1-Araç Kiralama \n2-Araç Teslim Alma \n0-ÇIKIŞ");
+                                                Console.WriteLine("0-Tüm araçları listele\n1-Markaya Göre Listele");
                                                 Console.Write("Yapmak istediğiniz işlemi seçiniz:");
-                                                int aracIstek = Convert.ToInt32(Console.ReadLine());
+                                                int filtreIstek = Convert.ToInt32(Console.ReadLine());
 
-                                                if (aracIstek == 1)
+                                                if (filtreIstek == 0)
                                                 {
-                                                    Console.WriteLine("0-Tüm araçları listele\n1-Markaya Göre Listele");
-                                                    Console.Write("Yapmak istediğiniz işlemi seçiniz:");
-                                                    int filtreIstek = Convert.ToInt32(Console.ReadLine());
+                                                    //araclari listele
+                                                    Console.Clear();
+                                                    arabaManager.ArabaListele();
+                                                    break;
+                                                }
 
-                                                    if (filtreIstek == 0)
-                                                    {
-                                                        //araclari listele
-                                                        Console.Clear();
-                                                        arabaManager.ArabaListele();
-                                                        break;
-                                                    }
+                                                else if (filtreIstek == 1)
+                                                {
 
-                                                    else if (filtreIstek == 1)
-                                                    {
+                                                    //markalara gore listele
+                                                }
 
-                                                        //markalara gore listele
-                                                    }
-
-                                                    else if (aracIstek == 0)
-                                                    {
-                                                        break;
-                                                    }
+                                                else if (aracIstek == 0)
+                                                {
+                                                    break;
                                                 }
                                             }
                                         }
-                                        else { Console.WriteLine("Şifre Yanlış"); }
                                     }
+                                    else { Console.WriteLine("Şifre Yanlış"); }
                                 }
-                            }
-
-                            else if (istek == 0)
-                            {
-                                Console.WriteLine("Sistemden çıkış yapılıyor...");
-                            }
-
-                            else
-                            {
-                                Console.WriteLine("Hatalı Tuşlama Yaptınız!");
                             }
                         }
 
+                        else if (istek == 0)
+                        {
+                            Console.WriteLine("Sistemden çıkış yapılıyor...");
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("Hatalı Tuşlama Yaptınız!");
+                        }
                     }
 
-
-
-                    //int menuIstek = 0;
-                    //int menuIstek2 = 0;
-                    //while (menuIstek != 9)
-                    //{
-                    //    Console.WriteLine("---Yönetici Paneli---");
-                    //    Console.WriteLine("1-Arac Yonetimi \n2-Musteri Yonetim \n3-Araçlari Listele \n4-Musteri Ekle \n5-Musterileri Listele \n6-Personel Çıkar \n7-Personelleri Listele \n8-Sistemden Cikis Yap");
-                    //    Console.Write("Yapmak istediğiniz işlemi seçiniz-->");
-                    //    menuIstek = Convert.ToInt32(Console.ReadLine());      
-
-                    //    switch (menuIstek)
-                    //    {
-                    //        case 1:
-                    //            Console.Clear();
-                    //            while (menuIstek2 != 0)
-                    //            {
-                    //                Console.WriteLine("1-Arac Ekle");
-                    //                Console.WriteLine("2-Arac Sil");
-                    //                Console.WriteLine("3-Arac Listele");
-                    //                Console.WriteLine("4-Ust Menuye Don");
-                    //                menuIstek2 = Convert.ToInt32(Console.ReadLine());
-
-                    //                if (menuIstek2 == 1)
-                    //                {
-                    //                    Console.Clear();
-                    //                    arabaManager.ArabaEkle();
-                    //                    break;
-                    //                }
-
-                    //                if (menuIstek2 == 2)
-                    //                {
-                    //                    Console.Clear();
-                    //                    arabaManager.ArabaSil();
-                    //                    break;
-                    //                }
-
-                    //                if (menuIstek2 == 3)
-                    //                {
-                    //                    Console.Clear();
-                    //                    arabaManager.ArabaListele();
-                    //                    break;
-                    //                }
-
-                    //                if (menuIstek2 == 4)
-                    //                {
-                    //                    break;
-                    //                }
-                    //            }
-
-                    //            Console.Clear();
-
-                    //            arabaManager.ArabaEkle();
-                    //            break;
-
-                    //        case 2:
-                    //            Console.Clear();
-                    //            arabaManager.ArabaSil();
-                    //            break;
-
-                    //        case 3:
-                    //            Console.Clear();
-                    //            arabaManager.ArabaListele();
-                    //            break;
-
-                    //        case 4:                       
-                    //            Console.Clear();
-                    //            customerManager.Ekle();
-                    //            break;
-
-                    //        case 5:
-                    //            Console.Clear();
-                    //            customerManager.Listele();
-                    //            break;
-
-                    //        case 6:
-                    //            Console.Clear();
-                    //            break;
-
-                    //        default:
-                    //            break;
-                    //    }
-                    //}
-
-
                 }
+ 
             }
         }
     }
 }
+
 
 
