@@ -168,77 +168,75 @@ namespace VeritabanliAracKiralamaProjesi
 
                         }
 
-                        ///////////////////////////////////////////////////////////////////////////////
-                        else if (istek == 2)
-                        {
-                            if (true)
-                            {
 
-                            }
-                            Console.Write("Kullanıcı adınızı giriniz:");
-                            kullaniciAdi = Console.ReadLine();
-                            Console.Write("Parolanızı giriniz:");
-                            sifre = Console.ReadLine();
-
-                            for (i = 0; i < kullaniciAdlari.Count; i++)
-                            {
-                                if (kullaniciAdi == kullaniciAdlari[i])
-                                {
-                                    if (sifre == sifreler[i])
-                                    {
-                                        Console.WriteLine("Girş Yapıldı \n");
-
-                                        while (true)
-                                        {
-                                            Console.WriteLine("1-Araç Kiralama \n2-Araç Teslim Alma \n0-ÇIKIŞ");
-                                            Console.Write("Yapmak istediğiniz işlemi seçiniz:");
-                                            int aracIstek = Convert.ToInt32(Console.ReadLine());
-
-                                            if (aracIstek == 1)
-                                            {
-                                                Console.WriteLine("0-Tüm araçları listele\n1-Markaya Göre Listele");
-                                                Console.Write("Yapmak istediğiniz işlemi seçiniz:");
-                                                int filtreIstek = Convert.ToInt32(Console.ReadLine());
-
-                                                if (filtreIstek == 0)
-                                                {
-                                                    //araclari listele
-                                                    Console.Clear();
-                                                    arabaManager.ArabaListele();
-                                                    break;
-                                                }
-
-                                                else if (filtreIstek == 1)
-                                                {
-
-                                                    //markalara gore listele
-                                                }
-
-                                                else if (aracIstek == 0)
-                                                {
-                                                    break;
-                                                }
-                                            }
-                                        }
-                                    }
-                                    else { Console.WriteLine("Şifre Yanlış"); }
-                                }
-                            }
-                        }
-
-                        else if (istek == 0)
-                        {
-                            Console.WriteLine("Sistemden çıkış yapılıyor...");
-                        }
-
-                        else
-                        {
-                            Console.WriteLine("Hatalı Tuşlama Yaptınız!");
-                        }
                     }
 
                 }
- 
+                ///////////////////////////////////////////////////////////////////////////////
+                else if (istek == 2)
+                {
+                    
+                    Console.Write("Kullanıcı adınızı giriniz:");
+                    kullaniciAdi = Console.ReadLine();
+                    Console.Write("Parolanızı giriniz:");
+                    sifre = Console.ReadLine();
+
+                    for (i = 0; i < kullaniciAdlari.Count; i++)
+                    {
+                        if (kullaniciAdi == kullaniciAdlari[i])
+                        {
+                            if (sifre == sifreler[i])
+                            {
+                                Console.WriteLine("Girş Yapıldı \n");
+
+                                while (true)
+                                {
+                                    Console.WriteLine("1-Araç Kiralama \n2-Araç Teslim Alma \n0-ÇIKIŞ");
+                                    Console.Write("Yapmak istediğiniz işlemi seçiniz:");
+                                    int aracIstek = Convert.ToInt32(Console.ReadLine());
+
+                                    if (aracIstek == 1)
+                                    {
+                                        Console.WriteLine("0-Tüm araçları listele\n1-Markaya Göre Listele");
+                                        Console.Write("Yapmak istediğiniz işlemi seçiniz:");
+                                        int filtreIstek = Convert.ToInt32(Console.ReadLine());
+
+                                        if (filtreIstek == 0)
+                                        {
+                                            //araclari listele
+                                            Console.Clear();
+                                            arabaManager.ArabaListele();
+                                            break;
+                                        }
+
+                                        else if (filtreIstek == 1)
+                                        {
+
+                                            //markalara gore listele
+                                        }
+
+                                        else if (aracIstek == 0)
+                                        {
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                            else { Console.WriteLine("Şifre Yanlış"); }
+                        }
+                    }
+                }
+
+                else if (istek == 0)
+                {
+                    Console.WriteLine("Sistemden çıkış yapılıyor...");
+                }
+
+                else
+                {
+                    Console.WriteLine("Hatalı Tuşlama Yaptınız!");
+                }
+
             }
         }
     }
